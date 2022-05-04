@@ -1,17 +1,15 @@
 # phaser-angular
 
  https://rottk.tistory.com/entry/Phaser3-%EC%9D%98-%EA%B8%B0%EB%B3%B8%EA%B8%B0%EB%8A%A5-%EB%B0%8F-%ED%8D%BC%EC%A6%90%EA%B2%8C%EC%9E%84-%EC%98%88%EC%8B%9C?category=812297
- https://rottk.tistory.com/entry/Angular-%EC%99%80-Phaser-%ED%95%A8%EA%BB%98-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0?category=812297
 
-세팅방법
- https://braelynnn.medium.com/using-phaser-in-an-angular-8-component-53644a2280e3
+
 
  angular13 + phaser 로 만든 A tower defense game
  https://github.com/stijn-jonckheere2/portals-td
 
  doc : https://newdocs.phaser.io/docs/
 
-## 환경설정
+## 환경설정 및 세팅
 ```
 npm i phaser
 ```

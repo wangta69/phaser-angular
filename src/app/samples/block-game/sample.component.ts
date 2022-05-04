@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as Phaser from 'phaser';
 @Component({
   selector: 'app-root',
-  templateUrl: './sample.component.html',
+  template:``
 })
 
 export class Bricks implements OnInit {
