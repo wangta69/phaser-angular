@@ -7,8 +7,6 @@ import * as Phaser from 'phaser';
 
 export class Bricks implements OnInit {
     public readonly gameConfig = {
-        title: "Phaser Running @ Angular",
-        version: "0.0.1",
         type: Phaser.AUTO,
         width: 480, // 480
         height: 320, // 320
@@ -20,13 +18,13 @@ export class Bricks implements OnInit {
                 setBounds: false
             }
         },
-      // parent: null,
-      callbacks: {
-        postBoot: function(game: any) { // 상기 width, height에 초기 설정 및 이미지를 설정후 아래처럼  스케일을 변경한다.
-          game.canvas.style.width = '100%';
-          game.canvas.style.height = '100%';
+        // parent: null,
+        callbacks: {
+            postBoot: function(game: any) { // 상기 width, height에 초기 설정 및 이미지를 설정후 아래처럼  스케일을 변경한다.
+                game.canvas.style.width = '100%';
+                game.canvas.style.height = '100%';
+            }
         }
-      }
     }
 
     private game: any;
@@ -216,6 +214,7 @@ export class MyScene extends Phaser.Scene {
 
     // 업데이트될 정보를 입력
     override update()  {
+        console.log('update');
         this.paddle.x =  this.game.input.activePointer.x ||  this.cameras.main.width * 0.5;
     }
 

@@ -8,8 +8,6 @@ export class SampleComponent1 implements AfterViewInit {
     // name = 'Angular';
     // public game: Phaser.Game;
     public readonly gameConfig = {
-      title: "Phaser Running Test @ Angular",
-      version: "0.0.1",
       type: Phaser.AUTO,
       width: 480,
       height: 320,
