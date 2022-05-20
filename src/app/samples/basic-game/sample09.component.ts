@@ -23,9 +23,7 @@ export class BasicGameComponent9 {
         const game = new Phaser.Game(this.config);
         game.scene.add('main', new MyScene(), true);
     }
-
 }
-
 
 export class MyScene extends Phaser.Scene {
     private platforms: any;
