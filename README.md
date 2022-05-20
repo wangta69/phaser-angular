@@ -151,6 +151,8 @@ override update()  {
 [physics](/docs/grammar/physics.md "physics")
 [tilemap](/docs/grammar/tilemap.md "tilemap")
 [사운드 처리하기](/docs/grammar/sounds.md "사운드처리하기")
+[keyboard](/docs/basic-game/sample05.md "controller")
+[swipe](/docs/grammar/swipe.md "swipe")
 
 
 
