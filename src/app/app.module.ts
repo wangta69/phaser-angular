@@ -17,6 +17,7 @@ import { BasicGameComponent6 } from './samples/basic-game/sample06.component';
 import { BasicGameComponent7 } from './samples/basic-game/sample07.component';
 import { BasicGameComponent8 } from './samples/basic-game/sample08.component';
 import { BasicGameComponent9 } from './samples/basic-game/sample09.component';
+import { Animation } from './samples/animation/animation.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { BasicGameComponent9 } from './samples/basic-game/sample09.component';
     BasicGameComponent7,
     BasicGameComponent8,
     BasicGameComponent9,
+    Animation,
   ],
   imports: [
     BrowserModule,

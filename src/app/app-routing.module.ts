@@ -11,6 +11,7 @@ import { BasicGameComponent6 } from './samples/basic-game/sample06.component';
 import { BasicGameComponent7 } from './samples/basic-game/sample07.component';
 import { BasicGameComponent8 } from './samples/basic-game/sample08.component';
 import { BasicGameComponent9 } from './samples/basic-game/sample09.component';
+import { Animation } from './samples/animation/animation.component';
 
 const routes: Routes = [
     { path: 'samples/sample1', component: SampleComponent1 },
@@ -24,6 +25,7 @@ const routes: Routes = [
     { path: 'samples/basicgame/step7', component: BasicGameComponent7 },
     { path: 'samples/basicgame/step8', component: BasicGameComponent8 },
     { path: 'samples/basicgame/step9', component: BasicGameComponent9 },
+    { path: 'samples/animaion', component: Animation },
 ];
 
 @NgModule({

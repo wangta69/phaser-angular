@@ -147,9 +147,13 @@ override update()  {
 ```
 
 ### 문법설명
+[기본구조](/docs/grammar/structure.md "기본구조 이해")
 [간단한 사용법](/docs/grammar/add.md "기본구조 이해")
 [physics](/docs/grammar/physics.md "physics")
+[loader](/docs/grammar/loader.md "loader")
+[addgroup](/docs/grammar/addgroup.md "addgroup")
 [tilemap](/docs/grammar/tilemap.md "tilemap")
+[event](/docs/grammar/event.md "event")
 [사운드 처리하기](/docs/grammar/sounds.md "사운드처리하기")
 [keyboard](/docs/basic-game/sample05.md "controller")
 [swipe](/docs/grammar/swipe.md "swipe")
