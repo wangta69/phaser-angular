@@ -29,6 +29,10 @@ this.load.spritesheet(
     }
 );
 ```
+이미지 캐시를 삭제하기
+```
+this.textures.remove('key');
+```
 ```
 this.physics.add.sprite(50, 250, 'ball'); // x, y, texture
 ```
@@ -36,3 +40,4 @@ this.physics.add.sprite(50, 250, 'ball'); // x, y, texture
 ```
 this.load.audio('effect-sound', 'assets/sounds/sound-file')
 ```
+

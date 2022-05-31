@@ -50,24 +50,41 @@ export class BasicGameComponent1 {
         game.scene.add('main', new MyScene(), true);
     }
 }
-
+```
+```
 export class MyScene extends Phaser.Scene {
+```
+```
     constructor() {
         super({});
     }
+```
+this.game.scene.start('game',{ pieces: 3, image: 3 }) 처럼 파라미터를 start에 넘길 경우 init 에서 변수값을 받아서 처리한다.
+```
+    init(data) {
 
+    }
+```
+load할 asset을 이곳에 정의한다.
+```
     private preload ()
     {
 
     }
-
+```
+load 된 asset에 속성값을 부여한다.(play를 한다거나 position 을 정한다.)
+```
     private create ()
     {
     }
-
+```
+속성이 정해진 asset을 화면에 노출한다.
+```
     override update ()
     {
     }
+```
+```
 }
 ```
 
