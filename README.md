@@ -151,6 +151,7 @@ override update()  {
 [기본구조](/docs/grammar/structure.md "기본구조 이해")
 [간단한 사용법](/docs/grammar/add.md "기본구조 이해")
 [physics](/docs/grammar/physics.md "physics")
+[scene](/docs/grammar/scene.md "scene")
 [loader](/docs/grammar/loader.md "loader")
 [sprite](/docs/grammar/sprite.md "sprite")
 [addgroup](/docs/grammar/addgroup.md "addgroup")

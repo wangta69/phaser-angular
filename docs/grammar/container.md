@@ -28,3 +28,4 @@ create() {
         }, this);
 }
 ```
+this.add.container 사용시 [sprite, label, ....] 순으로 화면에 디스플레이 된다.
