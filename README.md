@@ -21,7 +21,7 @@ angular.json : scripts에 phaser.min.js 파일을 추가한다.
 ```
 "scripts": ["node_modules/phaser/dist/phaser.min.js"]
 ```
-tsconfig.json : lib에 scripthost를 추가한다.
+tsconfig.json : lib에 scripthost를 추가한다. [error TS2304: Cannot find name 'ActiveXObject'.]
 ```
 "lib": [
   "es2020",
@@ -67,13 +67,7 @@ export class SampleComponent1 {
     }
 
 ```
-[1-1. 기본구조](/docs/basic-game/sample01.md "기본구조 이해")
-[1-2. Config](/docs/basic-game/sample01-config.md "Config 이해")
-[2. Preload](/docs/basic-game/sample02.md "preload 이해")
-[3.  Create &  World Building](/docs/basic-game/sample03.md "World Building")
-[4. player](/docs/basic-game/sample04.md "Player")
-[5. controller - keyboard](/docs/basic-game/sample05.md "controller")
-[6. star](/docs/basic-game/sample06.md "star")
+
 game = new Phaser.Game(config); 를 이용하여 phaser를 실행한다.
 game.scene.add('KEY', new MyScene(), true);
 sample0
@@ -145,7 +139,13 @@ override update()  {
     this.ball.y +=  1;
 }
 ```
-
+[1-1. 기본구조](/docs/basic-game/sample01.md "기본구조 이해")
+[1-2. Config](/docs/basic-game/sample01-config.md "Config 이해")
+[2. Preload](/docs/basic-game/sample02.md "preload 이해")
+[3.  Create &  World Building](/docs/basic-game/sample03.md "World Building")
+[4. player](/docs/basic-game/sample04.md "Player")
+[5. controller - keyboard](/docs/basic-game/sample05.md "controller")
+[6. star](/docs/basic-game/sample06.md "star")
 ### 문법설명
 
 [기본구조](/docs/grammar/structure.md "기본구조 이해")

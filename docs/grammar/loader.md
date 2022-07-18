@@ -38,6 +38,26 @@ this.physics.add.sprite(50, 250, 'ball'); // x, y, texture
 ```
 ## Sound
 ```
-this.load.audio('effect-sound', 'assets/sounds/sound-file')
+private preload ()
+{
+    this.load.audio('mysound', 'assets/sounds/sound-file')
+}
+
+const mySound = this.sound.add('mysound');
+mySound.play({loop: true, volume: 0.9})
+
+```
+
+## JSON
+```
+private preload ()
+{
+    this.load.json('gameData', '/assets/data/1.json');
+}
+
+private create ()
+{
+    const gameData = this.cache.json.get('gameData');
+}
 ```
 

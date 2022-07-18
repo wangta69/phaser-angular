@@ -41,3 +41,5 @@ Phaser.AUTO를 추천한다. AUTO를 사용하면 처음에는 WEBGL을 사용�
 - width, height : 800x600의 canvas를 만든다. (이것은 resolution 크기이다.)
 - physics 물리적 환경을 적용할때 사용한다.
 - scene : 각각의 scene을 정의한다.
+- scale
+-- scale.parent: id를 지정함으로 그 id 안으로 canvas를 출력되게 한다.
