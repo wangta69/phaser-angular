@@ -1,7 +1,14 @@
 #Loader
 ## Image
 ```
-this.load.image('key', 'image');
+this.load.image('key', 'image path');
+```
+```
+this.add.image(0, 0, 'key').setOrigin(0, 0)
+```
+## svg
+```
+this.load.svg('key', 'image path');
 ```
 ```
 this.add.image(0, 0, 'key').setOrigin(0, 0)
@@ -52,12 +59,24 @@ mySound.play({loop: true, volume: 0.9})
 ```
 private preload ()
 {
+    this.cache.json.remove('gameData'); // 캐시삭제하기
     this.load.json('gameData', '/assets/data/1.json');
 }
 
 private create ()
 {
     const gameData = this.cache.json.get('gameData');
+}
+```
+
+## 모든 캐시 삭제
+```
+for(let type in this.cache) {
+    if (type != 'game') {
+        for (let entry in this.cache[type]) {
+            this.cache[type].remove(entry);
+        }
+    }
 }
 ```
 

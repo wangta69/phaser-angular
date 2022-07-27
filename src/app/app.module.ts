@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { SampleComponent1 } from './samples/sample1/sample.component';
+import { SampleComponent2 } from './samples/sample2/sample.component';
 import { Bricks } from './samples/block-game/sample.component';
 
 import { BasicGameComponent1 } from './samples/basic-game/sample01.component';
@@ -23,6 +24,7 @@ import { Animation } from './samples/animation/animation.component';
   declarations: [
     AppComponent,
     SampleComponent1,
+    SampleComponent2,
     Bricks,
     BasicGameComponent1,
     BasicGameComponent2,

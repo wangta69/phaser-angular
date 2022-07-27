@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SampleComponent1 } from './samples/sample1/sample.component';
+import { SampleComponent2 } from './samples/sample2/sample.component';
 import { Bricks } from './samples/block-game/sample.component';
 import { BasicGameComponent1 } from './samples/basic-game/sample01.component';
 import { BasicGameComponent2 } from './samples/basic-game/sample02.component';
@@ -15,6 +16,7 @@ import { Animation } from './samples/animation/animation.component';
 
 const routes: Routes = [
     { path: 'samples/sample1', component: SampleComponent1 },
+    { path: 'samples/sample2', component: SampleComponent2 },
     { path: 'samples/game-bricks', component: Bricks },
     { path: 'samples/basicgame/step1', component: BasicGameComponent1 },
     { path: 'samples/basicgame/step2', component: BasicGameComponent2 },

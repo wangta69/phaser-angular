@@ -154,15 +154,17 @@ override update()  {
 [scene](/docs/grammar/scene.md "scene")
 [loader](/docs/grammar/loader.md "loader")
 [sprite](/docs/grammar/sprite.md "sprite")
-[addgroup](/docs/grammar/addgroup.md "addgroup")
+
 [tilemap](/docs/grammar/tilemap.md "tilemap")
 [event](/docs/grammar/event.md "event")
 [사운드 처리하기](/docs/grammar/sounds.md "사운드처리하기")
 [keyboard](/docs/basic-game/sample05.md "controller")
 [swipe](/docs/grammar/swipe.md "swipe")
 [text 처리하기](/docs/grammar/text.md "text")
+[addgroup](/docs/grammar/addgroup.md "addgroup")
 [group](/docs/grammar/group.md "group")
 [container](/docs/grammar/container.md "container")
+[다각형 그리기](/docs/grammar/shape.md "shape")
 
 
 
