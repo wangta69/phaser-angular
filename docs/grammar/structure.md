@@ -138,3 +138,23 @@ constructor() {
 ```
 위와 같은 겨우 MyScene1 이 자동로드되고 이후 프로그램에서
 this.scene.start('game', { level: 1 }) 처럼 다음 scene의 key를 호출하여야 한다.
+
+
+## SCALE
+```
+scale: {
+    parent: 'yourgamediv',
+    mode: Phaser.Scale.FIT,
+    width: 800,
+    height: 600
+}
+```
+
+```
+scale: {
+    parent: 'yourgamediv',
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+    width: 800,
+    height: 600
+}
+```

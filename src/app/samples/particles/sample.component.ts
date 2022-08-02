@@ -4,7 +4,7 @@ import * as Phaser from 'phaser';
   selector: 'app-root',
   template:``
 })
-export class SampleComponent2 implements AfterViewInit {
+export class ParticleComponent implements AfterViewInit {
     // name = 'Angular';
     // public game: Phaser.Game;
     public readonly gameConfig = {
