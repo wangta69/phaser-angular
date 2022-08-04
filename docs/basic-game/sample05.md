@@ -33,3 +33,23 @@ if (cursors.up.isDown && player.body.touching.down)
 left 키가 눌려진 상태이면 left방향으로 속도를 증가하고 일전에 정의한 player.anims.play에서 'left' 로 정의된 animation을 실행한다.
 
 up 상태가 눌려지만 Y측 중력값을 - 로 설정하여 위로 올라가게 한다.
+
+
+# Controlling the player with the Mouse
+
+```
+mouse = this.input.mousePointer;
+```
+위와 같이 정의 함으로서 4곳의 방향(up, down, left, right)에 대한 키값을 얻을 수 있다
+
+```
+if (mouse.isDown) // 마우스가 다운상태인지 확인
+{
+    // Do action
+}
+
+```
+```
+this.input.x : // 마우스의 x좌표
+this.input.y : // 마우스의 y좌표
+```

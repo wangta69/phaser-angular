@@ -6,6 +6,8 @@ import { Bricks } from './samples/block-game/sample.component';
 import { Tank } from './samples/tank-game/sample.component';
 import { TextureComponent } from './samples/texture/sample.component';
 import { ParticleComponent } from './samples/particles/sample.component';
+import { SnowComponent } from './samples/particles/snow.component';
+import { ExplodeComponent } from './samples/particles/explode.component';
 import { BasicGameComponent1 } from './samples/basic-game/sample01.component';
 import { BasicGameComponent2 } from './samples/basic-game/sample02.component';
 import { BasicGameComponent3 } from './samples/basic-game/sample03.component';
@@ -16,14 +18,22 @@ import { BasicGameComponent7 } from './samples/basic-game/sample07.component';
 import { BasicGameComponent8 } from './samples/basic-game/sample08.component';
 import { BasicGameComponent9 } from './samples/basic-game/sample09.component';
 import { Animation } from './samples/animation/animation.component';
+import { BombComponent } from './samples/bomb/bomb.component';
+import { PirateComponent } from './samples/pirate/pirate.component';
+import { Pirate1Component } from './samples/pirate/pirate1.component';
 
 const routes: Routes = [
     { path: 'samples/sample1', component: SampleComponent1 },
     { path: 'samples/sample2', component: SampleComponent2 },
     { path: 'samples/game-bricks', component: Bricks },
     { path: 'samples/game-tanks', component: Tank },
+    { path: 'samples/bomb', component: BombComponent },
+    { path: 'samples/pirate', component: PirateComponent },
+    { path: 'samples/pirate1', component: Pirate1Component },
     { path: 'samples/texture', component: TextureComponent },
     { path: 'samples/particles/1', component: ParticleComponent },
+    { path: 'samples/particles/snow', component: SnowComponent },
+    { path: 'samples/particles/explode', component: ExplodeComponent },
     { path: 'samples/basicgame/step1', component: BasicGameComponent1 },
     { path: 'samples/basicgame/step2', component: BasicGameComponent2 },
     { path: 'samples/basicgame/step3', component: BasicGameComponent3 },

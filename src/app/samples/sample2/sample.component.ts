@@ -57,95 +57,57 @@ export class MyScene extends Phaser.Scene {
     }
 
     public create()  {
-        // https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html#line__anchor
-        // shows a red line
-        // this.graphics = this.add.graphics();
-        //  참조 : https://rexrainbow.github.io/phaser3-rex-notes/docs/site/graphics/
 
-        this.add.line(0,0,100,100,200,200,0xff0000);
-        // ####################################
+        ///////////////////////////
+        this.add.text(50, 20, 'add.Line Red color');
+        this.add.line(0,0,100,100, 100, 200,0xff0000);
 
-        const graphic1 = this.add.graphics();
-        this.path = this.add.path(10, 10);
+        ///////////////////////////
+        this.add.text(250, 50, 'add.path White color');
+        const g = this.add.graphics();
+        g.lineStyle(2, 0xffffff, 1);
+        this.path = this.add.path(300, 100); // 시작점
          // path.splineTo([ 164, 446, 274, 542, 412, 457, 522, 541, 664, 464 ]);
-        this.path.lineTo(50, 100);
-        this.path.lineTo(200, 150);
-
+        this.path.lineTo(400, 100);
+        this.path.lineTo(400, 200);
         //  cubicBezierTo: function (x, y, control1X, control1Y, control2X, control2Y)
         this.path.cubicBezierTo(250, 200, 200, 100, 400, 100);
         this.path.closePath();
-        this.path.draw(graphic1);
-        // ####################################
+        // this.path.fillStyle(0xFF00FF);
+        g.fillStyle(0xffff00);
+        g.fillPoints(this.path.getPoints()); //
+        this.path.draw(g);
 
-        const graphics2 = this.add.graphics();
-        graphics2.lineStyle(10, 0x0066F); // graphics.lineStyle(lineWidth, color, alpha);
+        ///////////////////////////
+        this.add.text(500, 50, 'draw line 남색 color');
+        g.lineStyle(10, 0x0066F); // graphics.lineStyle(lineWidth, color, alpha);
         // graphics2.fillGradientStyle(0xff0000, 0x00ff00, 0xff0000, 0xffff00, 1);
 
-        graphics2.beginPath();
+        g.beginPath();
 
-        graphics2.moveTo(200, 50);
-        graphics2.lineTo(100, 139);
-        graphics2.lineTo(170, 215);
-        graphics2.lineTo(325, 150);
-        graphics2.lineTo(350, 90);
-        graphics2.lineTo(300, 40);
+        g.moveTo(500, 100);
+        g.lineTo(600, 100);
+        g.lineTo(600, 200);
+        g.lineTo(500, 200);
 
-        graphics2.closePath();
-        graphics2.strokePath();
-        // graphics2.fillPath();
+        g.closePath();
+        // g.fillStyle(0xFF00FF);
+        g.strokePath();
 
-
-        const clr = 0xffff00;
-        const health = 90;
-        const barrelWidth = 100;
-        const graphics3 = this.add.graphics();
-        const x = 500;
-        const y = 500;
-        const barrelOffset = {x: 550, y: 550};
-        const barrelX =600;
-        const barrelY = 600;
+        this.add.text(700, 50, 'fill 분홍 color');
+        // g.lineStyle(1, 0x0066F);
+        g.beginPath();
+        g.fillStyle(0xFF00FF);
+        g.lineStyle(2, 0x0066F, 1.0);
+        g.fillRect(700, 100,  24, 10);
+        g.strokeRect(700, 100, 24, 10);
 
 
-        graphics3.fillStyle(0xFF00FF);
-        // // graphics3.lineStyle(5, 0xFF00FF, 1.0);
-        graphics3.fillRect(x, y, (health / 100) * 24, 10);
-        graphics3.strokeRect(x, y, 24, 10);
-        // graphics3.fillStyle(clr);
-        // // graphics3.strokeStyle(clr);
-        // // graphics3.lineWidth = barrelWidth;
-        // graphics3.lineGradientStyle(barrelWidth, 0, 0, 0, 0)
-        // // graphics3.lineCap = 'butt';
-        // graphics3.beginPath();
-        // graphics3.moveTo(x + barrelOffset.x, y + barrelOffset.y);
-        // // this.barrelX = x + Math.cos(angle) * barrelLength;
-        // // this.barrelY = y - 8 - Math.sin(angle) * barrelLength;
-        // graphics3.lineTo(barrelX, barrelY);
-        // graphics3.stroke();
 
-        /////////////////
-        // const graphics4 = this.add.graphics();
-        // graphics4.beginPath();
-        // graphics4.closePath();
-        // graphics4.fillPath(); // = graphics.fill()
-        // graphics4.strokePath(); // = graphics.stroke()
+        // arrow 그리기
 
-        // 다음에 보기 이미지로 채우기
-        //https://rexrainbow.github.io/phaser3-rex-notes/docs/site/graphics/
-        const graphics4 = this.add.graphics();
-        graphics4.lineStyle(23, 0x0066F, 0.26); // graphics.lineStyle(lineWidth, color, alpha);
-        // graphics2.fillGradientStyle(0xff0000, 0x00ff00, 0xff0000, 0xffff00, 1);
-
-        graphics4.beginPath();
-
-        graphics4.moveTo(161.36722593426043, 678.2132032509064);
-        graphics4.lineTo(161.0084585014725 , 679.1466302320736);
-        graphics4.lineTo(160.41375549821657 , 678.5146897806061);
-        graphics4.lineTo(161.36722593426043 , 678.2132032509064);
-        graphics4.lineTo(161.0084585014725 , 679.1466302320736);
-        graphics4.lineTo(76.51441219187474 , 758.0660169932921);
-
-        graphics4.closePath();
-        graphics4.strokePath();
+        this.drawArrow(g, 10, 300, 100, 400, 10, 0xff0000);  // red
+        this.drawArrow(g, 90, 320, 140, 260, 20, 0x000000); // black
     }
 
     // 업데이트될 정보를 입력
@@ -153,6 +115,91 @@ export class MyScene extends Phaser.Scene {
         console.log('update');
         // this.graphics.lineStyle(2, 0xffffff, 1);
         // this.path.draw(this.graphics);
+    }
+
+    private drawArrow(ctx: any, fromx: number, fromy: number, tox: number, toy: number, arrowWidth: number, color: number){
+        // https://codepen.io/chanthy/pen/WxQoVG
+        //variables to be used when creating the arrow
+        const headlen = arrowWidth * 3;
+        const angle = Math.atan2(toy - fromy, tox - fromx);
+
+        ctx.fillStyle(color);
+        const path = this.add.path(tox, toy); // 화살표의 꼭지점
+        ctx.lineStyle(1, color);
+        console.log('after:', tox)
+
+        // 사이드1
+        const x1 = tox - headlen * Math.cos(angle - Math.PI / 7);
+        const y1 = toy - headlen * Math.sin(angle - Math.PI / 7);
+        path.lineTo(x1, y1);
+        //
+        // path from the side point of the arrow, to the other side point
+        const x2 = tox - headlen*Math.cos(angle+Math.PI/7);
+        const y2 = toy - headlen*Math.sin(angle+Math.PI/7);
+        path.lineTo(x2, y2);
+        // 화살표의 안쪽을 채워준다.
+        ctx.fillPoints(path.getPoints());
+        path.draw(ctx);
+
+        // 화살표의 아래면의 좌표값의 중간 값을 구한다.
+        const cx = (x2 + x1) / 2;
+        const cy = (y2 + y1) / 2;
+        console.log('x1:', x1, 'y1:', y1, 'x2:', x2, 'y2:', y2, 'cx:', cx, 'cy:', cy )
+
+        const inclination = (y1 - y2) / (x1 - x2);
+        // 라인을 그려준다.
+        ctx.lineStyle(arrowWidth, color);
+        ctx.beginPath();
+        ctx.moveTo(fromx, fromy);
+        ctx.lineTo(cx, cy);
+        ctx.stroke();
+        ctx.closePath();
+
+
+    }
+
+    private drawArrow2(ctx: any, fromx: number, fromy: number, tox: number, toy: number, arrowWidth: number, color: number){
+        // https://codepen.io/chanthy/pen/WxQoVG
+        //variables to be used when creating the arrow
+        var headlen = 10;
+        var angle = Math.atan2(toy - fromy, tox - fromx);
+
+        ctx.save();
+        // ctx.lineStyle(arrowWidth, color);
+        // ctx.strokeStyle = color;
+
+        //starting path of the arrow from the start square to the end square
+        //and drawing the stroke
+        ctx.beginPath();
+        ctx.moveTo(fromx, fromy);
+        ctx.lineTo(tox, toy);
+        // ctx.lineWidth = arrowWidth;
+        ctx.stroke();
+        ctx.closePath();
+
+        //starting a new path from the head of the arrow to one of the sides of
+        //the point
+        ctx.beginPath();
+        // ctx.lineStyle(1, color);
+        ctx.moveTo(tox, toy);
+        ctx.lineTo(tox - headlen*Math.cos(angle-Math.PI/7),
+                   toy - headlen*Math.sin(angle-Math.PI/7));
+
+        //path from the side point of the arrow, to the other side point
+        ctx.lineTo(tox - headlen*Math.cos(angle+Math.PI/7),
+                   toy - headlen*Math.sin(angle+Math.PI/7));
+
+        // //path from the side point back to the tip of the arrow, and then
+        // //again to the opposite side point
+        // ctx.lineTo(tox, toy);
+        // ctx.lineTo(tox - headlen*Math.cos(angle-Math.PI/7),
+        //            toy - headlen*Math.sin(angle-Math.PI/7));
+
+        //draws the paths created above
+        ctx.closePath();
+        ctx.fillStyle(0xFF00FF);
+        ctx.stroke();
+        // ctx.restore();
     }
 
 

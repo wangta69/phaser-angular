@@ -4,7 +4,7 @@ import * as Phaser from 'phaser';
   selector: 'app-root',
   template:``
 })
-export class ParticleComponent implements AfterViewInit {
+export class SnowComponent implements AfterViewInit {
     // name = 'Angular';
     // public game: Phaser.Game;
     public readonly gameConfig = {
@@ -53,11 +53,20 @@ export class MyScene extends Phaser.Scene {
     }
 
     public preload()  {
-        this.load.atlas('flares', '/assets/particles/flares.png', '/assets/particles/flares.json');
+        this.load.spritesheet({
+            key: 'snowflakes',
+            url: 'assets/sprites/snowflakes.png',
+            frameConfig: {frameWidth: 17, frameHeight: 17}
+        });
+        this.load.spritesheet({
+            key: 'snowflakes_large',
+            url: 'assets/sprites/snowflakes_large.png',
+            frameConfig: {frameWidth: 64, frameHeight: 64}
+        });
     }
 
     public create()  {
-        const particles = this.add.particles('flares');
+        // const particles = this.add.particles('snowflakes');
 
         // particles.createEmitter({
         //     frame: 'blue',
@@ -70,17 +79,20 @@ export class MyScene extends Phaser.Scene {
         //     blendMode: 'ADD'
         // });
 
-        particles.createEmitter({
-            frame: [ 'red', 'green', 'blue' ],
-            x: 400,
-            y: 100,
-            speed: 300,
-            gravityY: 400,
-            lifespan: 4000,
-            scale: 0.4,
+        const particles = this.add.particles('snowflakes').createEmitter({
+            frame: [ 0, 1, 2, 3, 4, 5 ],
+            x: { min: 0, max: 800 },
+            y: 0,
+            speed: { min: 100, max: 200 },
+            gravityY: 50,
+            lifespan: 10000,
+            scale:{ start: 0.5, end: 1 },
             blendMode: 'ADD',
             // deathZone: { type: 'onEnter', source: rectangles }
         });
+
+        particles.stop();
+        particles.start();
     }
 
     // 업데이트될 정보를 입력

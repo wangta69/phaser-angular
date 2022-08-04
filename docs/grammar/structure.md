@@ -84,7 +84,13 @@ load 된 asset에 속성값을 부여한다.(play를 한다거나 position 을 �
     {
     }
 ```
+update는 time과 delta라는 두가지 전달값을 받을 수도 있다.
+time: 총플레이 시간
+delta : 이전 시간과 현재 시간과의 차이
 ```
+override update (time: number, delta: number)
+{
+    console.log('update: ', time, delta);
 }
 ```
 

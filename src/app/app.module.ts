@@ -12,6 +12,11 @@ import { Tank } from './samples/tank-game/sample.component';
 import { TextureComponent } from './samples/texture/sample.component';
 
 import { ParticleComponent } from './samples/particles/sample.component';
+import { SnowComponent } from './samples/particles/snow.component';
+import { ExplodeComponent } from './samples/particles/explode.component';
+import { BombComponent } from './samples/bomb/bomb.component';
+import { PirateComponent } from './samples/pirate/pirate.component';
+import { Pirate1Component } from './samples/pirate/pirate1.component';
 
 import { BasicGameComponent1 } from './samples/basic-game/sample01.component';
 import { BasicGameComponent2 } from './samples/basic-game/sample02.component';
@@ -33,6 +38,8 @@ import { Animation } from './samples/animation/animation.component';
     Tank,
     TextureComponent,
     ParticleComponent,
+    SnowComponent,
+    ExplodeComponent,
     BasicGameComponent1,
     BasicGameComponent2,
     BasicGameComponent3,
@@ -43,6 +50,9 @@ import { Animation } from './samples/animation/animation.component';
     BasicGameComponent8,
     BasicGameComponent9,
     Animation,
+    BombComponent,
+    PirateComponent,
+    Pirate1Component,
   ],
   imports: [
     BrowserModule,

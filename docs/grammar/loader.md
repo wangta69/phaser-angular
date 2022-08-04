@@ -6,6 +6,11 @@ this.load.image('key', 'image path');
 ```
 this.add.image(0, 0, 'key').setOrigin(0, 0)
 ```
+### 이미지 변경
+```
+this.tank = this.add.image(0, 0, 'keyFrom')
+this.tank.setTexture('keyTo')
+```
 ## svg
 ```
 this.load.svg('key', 'image path');

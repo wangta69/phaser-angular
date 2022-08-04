@@ -142,7 +142,7 @@ override update()  {
 [1-1. 기본구조](/docs/basic-game/sample01.md "기본구조 이해")
 [1-2. Config](/docs/basic-game/sample01-config.md "Config 이해")
 [2. Preload](/docs/basic-game/sample02.md "preload 이해")
-[3.  Create &  World Building](/docs/basic-game/sample03.md "World Building")
+[3. Create &  World Building](/docs/basic-game/sample03.md "World Building")
 [4. player](/docs/basic-game/sample04.md "Player")
 [5. controller - keyboard](/docs/basic-game/sample05.md "controller")
 [6. star](/docs/basic-game/sample06.md "star")
@@ -155,10 +155,12 @@ override update()  {
 [loader](/docs/grammar/loader.md "loader")
 [sprite](/docs/grammar/sprite.md "sprite")
 
+[remove / hide](/docs/grammar/visible.md "visible")
+
 [tilemap](/docs/grammar/tilemap.md "tilemap")
 [event](/docs/grammar/event.md "event")
 [사운드 처리하기](/docs/grammar/sounds.md "사운드처리하기")
-[keyboard](/docs/basic-game/sample05.md "controller")
+[keyboard/마우스 이벤트(Input)](/docs/grammar/input.md "input")
 [swipe](/docs/grammar/swipe.md "swipe")
 [text 처리하기](/docs/grammar/text.md "text")
 [addgroup](/docs/grammar/addgroup.md "addgroup")
@@ -167,6 +169,7 @@ override update()  {
 [다각형 그리기](/docs/grammar/shape.md "shape")
 [Graphic(Drawing)](/docs/grammar/graphic.md "graphic")
 
+[충돌테스트(Collision)](/docs/grammar/collision.md "collision")
 
-참조 : https://steemit.com/utopian-io/@onepice/move-objects-according-to-the-mouse-position-with-phaser-3   Move Objects According To The Mouse Position With Phaser 3
+
 
