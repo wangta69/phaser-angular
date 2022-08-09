@@ -171,5 +171,9 @@ override update()  {
 
 [충돌테스트(Collision)](/docs/grammar/collision.md "collision")
 
+[Tween](/docs/grammar/tween.md "tween")
+[Time](/docs/grammar/time.md "time")
+[카메라(camera)](/docs/grammar/camera.md "camera")
+
 
 

@@ -126,7 +126,7 @@ g.strokeRoundedRect(x, y, width, height, radius);
 radius : number or an object {tl, tr, bl, br}
 
 ## 다양한 attribute 적용
-
+```
 g.fillStyle(color, alpha);
 g.fillStyle(0xFF00FF);
 
@@ -141,3 +141,31 @@ g.lineGradientStyle(barrelWidth, 0, 0, 0, 0)
 
 다음에 보기 이미지로 채우기
 //
+
+
+
+## 물리적인 effet 추가하기
+sprite를 이용하여 바로 물리적엔진으로 변겨
+```
+ this.bomb = this.physics.add.sprite(this.airplane.x, this.airplane.y, 'bomb');
+```
+물리적 그룹을 생성한후 추가
+```
+this.bomb = this.physics.add.group();
+this.bomb.create(this.airplane.x, this.airplane.y, 'bomb').setScale(0.5).refreshBody()
+```
+스태딕그룹으로 생성한 후 추가
+```
+this.platforms = this.physics.add.staticGroup();
+this.platforms.create(250, 520, 'ground').setScale(2, 0.5).refreshBody();
+```
+graphic 을 물리적 그룹에 추가
+```
+// const physicGraph = this.physics.add.staticGroup();
+// const graphics = this.add.graphics();
+// physicGraph.add(graphics);
+```
+
+```
+this.physics.world.enable(graphics);
+```

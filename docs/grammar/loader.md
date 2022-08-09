@@ -85,3 +85,10 @@ for(let type in this.cache) {
 }
 ```
 
+## bitmap Text
+```
+scene.load.bitmapFont(key, textureURL, xmlURL);
+```
+```
+this.load.bitmapFont('ArialBlackShadow', '/assets/images/ArialBlackShadow.png', '/assets/images/ArialBlackShadow.xml');
+```

@@ -62,9 +62,11 @@ export class MyScene extends Phaser.Scene {
         this.add.text(50, 20, 'add.Line Red color');
         this.add.line(0,0,100,100, 100, 200,0xff0000);
 
-        ///////////////////////////
-        this.add.text(250, 50, 'add.path White color');
+
         const g = this.add.graphics();
+        ///////////////////////////
+        this.add.text(250, 50, 'add.path White color Fill yellow');
+
         g.lineStyle(2, 0xffffff, 1);
         this.path = this.add.path(300, 100); // 시작점
          // path.splineTo([ 164, 446, 274, 542, 412, 457, 522, 541, 664, 464 ]);
@@ -82,7 +84,7 @@ export class MyScene extends Phaser.Scene {
         this.add.text(500, 50, 'draw line 남색 color');
         g.lineStyle(10, 0x0066F); // graphics.lineStyle(lineWidth, color, alpha);
         // graphics2.fillGradientStyle(0xff0000, 0x00ff00, 0xff0000, 0xffff00, 1);
-
+        g.fillStyle(0xFF00FF); // line 일경우 fillStyle이 먹지 않는다.
         g.beginPath();
 
         g.moveTo(500, 100);
@@ -101,6 +103,27 @@ export class MyScene extends Phaser.Scene {
         g.lineStyle(2, 0x0066F, 1.0);
         g.fillRect(700, 100,  24, 10);
         g.strokeRect(700, 100, 24, 10);
+
+
+
+
+
+
+        // g.fillStyle(0xffff00);
+        // g.lineStyle(2, 0xffffff, 1)
+        // // slopeGraphics.moveTo(100, 100);
+        //
+        // const path = this.add.path(100, 100);
+        //
+        // path.lineTo(500,100);
+        // path.lineTo(500,500);
+        // path.lineTo(100,500);
+        // path.closePath();
+        // path.draw(g);
+        // g.fillPoints(path.getPoints())
+
+
+
 
 
 
