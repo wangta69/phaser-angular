@@ -38,7 +38,11 @@ import {RandomTerrainGameComponent} from './samples/random-terrain/game.componen
 import {UserTerrainGameComponent} from './samples/random-terrain/game1.component';
 import {RandomTerrain2GameComponent} from './samples/random-terrain/game2.component';
 import {RiskyGameComponent} from './samples/risky-game/game.component';
+import {RiskyGame1Component} from './samples/risky-game/game1.component';
 
+
+import {StaticComponent} from './samples/matter/static.component';
+import {FixedRotationComponent} from './samples/matter/fixed-rotation.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +74,9 @@ import {RiskyGameComponent} from './samples/risky-game/game.component';
     UserTerrainGameComponent,
     RandomTerrain2GameComponent,
     RiskyGameComponent,
+    RiskyGame1Component,
     Box2dGameComponent,
+    FixedRotationComponent,
   ],
   imports: [
     BrowserModule,

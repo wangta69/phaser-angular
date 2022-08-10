@@ -29,6 +29,10 @@ import {RandomTerrainGameComponent} from './samples/random-terrain/game.componen
 import {UserTerrainGameComponent} from './samples/random-terrain/game1.component';
 import {RandomTerrain2GameComponent} from './samples/random-terrain/game2.component';
 import {RiskyGameComponent} from './samples/risky-game/game.component';
+import {RiskyGame1Component} from './samples/risky-game/game1.component';
+
+import {StaticComponent} from './samples/matter/static.component';
+import {FixedRotationComponent} from './samples/matter/fixed-rotation.component';
 
 const routes: Routes = [
     { path: 'samples/sample1', component: SampleComponent1 },
@@ -36,6 +40,7 @@ const routes: Routes = [
     { path: 'samples/game-bricks', component: Bricks },
     { path: 'samples/game-tanks', component: Tank },
     { path: 'samples/game-risky', component: RiskyGameComponent },
+    { path: 'samples/game-risky1', component: RiskyGame1Component },
     { path: 'samples/bomb', component: BombComponent },
     { path: 'samples/pirate', component: PirateComponent },
     { path: 'samples/pirate1', component: Pirate1Component },
@@ -61,6 +66,8 @@ const routes: Routes = [
     { path: 'samples/basicgame/step9', component: BasicGameComponent9 },
     { path: 'game/circular', component: CircularGameComponent },
     { path: 'samples/animaion', component: Animation },
+    { path: 'samples/matter/static', component: StaticComponent },
+    { path: 'samples/matter/fixed-rotation', component: FixedRotationComponent },
 ];
 
 @NgModule({
