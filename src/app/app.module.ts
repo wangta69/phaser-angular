@@ -10,6 +10,8 @@ import { SampleComponent2 } from './samples/sample2/sample.component';
 import { Bricks } from './samples/block-game/sample.component';
 import { Tank } from './samples/tank-game/sample.component';
 import { TextureComponent } from './samples/texture/sample.component';
+import { Texture1Component } from './samples/texture/sample1.component';
+import { Texture2Component } from './samples/texture/sample2.component';
 
 import { ParticleComponent } from './samples/particles/sample.component';
 import { SnowComponent } from './samples/particles/snow.component';
@@ -39,7 +41,7 @@ import {UserTerrainGameComponent} from './samples/random-terrain/game1.component
 import {RandomTerrain2GameComponent} from './samples/random-terrain/game2.component';
 import {RiskyGameComponent} from './samples/risky-game/game.component';
 import {RiskyGame1Component} from './samples/risky-game/game1.component';
-
+import {DropComponent} from './samples/drop/sample.component';
 
 import {StaticComponent} from './samples/matter/static.component';
 import {FixedRotationComponent} from './samples/matter/fixed-rotation.component';
@@ -52,6 +54,8 @@ import {FixedRotationComponent} from './samples/matter/fixed-rotation.component'
     Bricks,
     Tank,
     TextureComponent,
+    Texture1Component,
+    Texture2Component,
     ParticleComponent,
     SnowComponent,
     ExplodeComponent,
@@ -75,6 +79,7 @@ import {FixedRotationComponent} from './samples/matter/fixed-rotation.component'
     RandomTerrain2GameComponent,
     RiskyGameComponent,
     RiskyGame1Component,
+    DropComponent,
     Box2dGameComponent,
     FixedRotationComponent,
   ],

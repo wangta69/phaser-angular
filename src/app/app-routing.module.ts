@@ -5,6 +5,8 @@ import { SampleComponent2 } from './samples/sample2/sample.component';
 import { Bricks } from './samples/block-game/sample.component';
 import { Tank } from './samples/tank-game/sample.component';
 import { TextureComponent } from './samples/texture/sample.component';
+import { Texture1Component } from './samples/texture/sample1.component';
+import { Texture2Component } from './samples/texture/sample2.component';
 import { ParticleComponent } from './samples/particles/sample.component';
 import { SnowComponent } from './samples/particles/snow.component';
 import { ExplodeComponent } from './samples/particles/explode.component';
@@ -30,6 +32,7 @@ import {UserTerrainGameComponent} from './samples/random-terrain/game1.component
 import {RandomTerrain2GameComponent} from './samples/random-terrain/game2.component';
 import {RiskyGameComponent} from './samples/risky-game/game.component';
 import {RiskyGame1Component} from './samples/risky-game/game1.component';
+import {DropComponent} from './samples/drop/sample.component';
 
 import {StaticComponent} from './samples/matter/static.component';
 import {FixedRotationComponent} from './samples/matter/fixed-rotation.component';
@@ -41,10 +44,13 @@ const routes: Routes = [
     { path: 'samples/game-tanks', component: Tank },
     { path: 'samples/game-risky', component: RiskyGameComponent },
     { path: 'samples/game-risky1', component: RiskyGame1Component },
+    { path: 'samples/drop', component: DropComponent },
     { path: 'samples/bomb', component: BombComponent },
     { path: 'samples/pirate', component: PirateComponent },
     { path: 'samples/pirate1', component: Pirate1Component },
     { path: 'samples/texture', component: TextureComponent },
+    { path: 'samples/texture1', component: Texture1Component },
+    { path: 'samples/texture2', component: Texture2Component },
     { path: 'samples/randomterrain', component: RandomTerrainGameComponent },
     { path: 'samples/userterrain', component: UserTerrainGameComponent },
     { path: 'samples/randomterrain2', component: RandomTerrain2GameComponent },

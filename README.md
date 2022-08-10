@@ -168,7 +168,7 @@ override update()  {
 [container](/docs/grammar/container.md "container")
 [다각형 그리기](/docs/grammar/shape.md "shape")
 [Graphic(Drawing)](/docs/grammar/graphic.md "graphic")
-
+[Pattern & mask](/docs/grammar/pattern.md "pattern")
 [충돌테스트(Collision)](/docs/grammar/collision.md "collision")
 
 [Tween](/docs/grammar/tween.md "tween")

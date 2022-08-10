@@ -48,37 +48,37 @@ export class MyScene extends Phaser.Scene {
     }
 
     public preload()  {
-        this.load.image("brush", "sparkle1.png");
-        this.load.image("grass", "grass.png");
-        this.load.image("bg", "turkey-1985086.jpg");
+        this.load.image('brush', 'sparkle1.png');
+        this.load.image('grass', 'grass.png');
+        this.load.image('bg', 'turkey-1985086.jpg');
     }
 
     public create()  {
-        this.add.image(0, 0, "bg").setOrigin(0);
+        this.add.image(0, 0, 'bg').setOrigin(0);
 
         const SCALE = 0.1;
-        const texture = this.textures.createCanvas("canvastexture", 800, 600);
+        const texture = this.textures.createCanvas('canvastexture', 800, 600);
         const textureSmall = this.textures.createCanvas(
-            "canvastextureSmall",
+            'canvastextureSmall',
             SCALE * texture.width,
             SCALE * texture.height
         );
 
-        const grass: any = this.textures.get("grass").getSourceImage();
-        const brush = this.textures.get("brush").getSourceImage();
+        const grass: any = this.textures.get('grass').getSourceImage();
+        const brush = this.textures.get('brush').getSourceImage();
 
-        const brushHalfWidth = this.textures.get("brush").get().halfWidth;
-        const brushHalfHeight = this.textures.get("brush").get().halfHeight;
+        const brushHalfWidth = this.textures.get('brush').get().halfWidth;
+        const brushHalfHeight = this.textures.get('brush').get().halfHeight;
 
         texture.draw(0, 0, grass);
         texture.draw(512, 0, grass);
         texture.draw(0, 512, grass);
         texture.draw(512, 512, grass);
 
-        const text = this.add.text(80, 0, "Erase the grass", { backgroundColor: '#0009' })
+        const text = this.add.text(80, 0, 'Erase the grass', { backgroundColor: '#0009' })
           .setDepth(1);
 
-        this.add.image(0, 0, "canvastexture").setOrigin(0);
+        this.add.image(0, 0, 'canvastexture').setOrigin(0);
 
         // Backing
         this.add
@@ -86,9 +86,9 @@ export class MyScene extends Phaser.Scene {
           .setOrigin(0);
 
         // Mini texture
-        this.add.image(0, 0, "canvastextureSmall").setOrigin(0);
+        this.add.image(0, 0, 'canvastextureSmall').setOrigin(0);
 
-        this.input.on("pointermove", (pointer: any) => {
+        this.input.on('pointermove', (pointer: any) => {
           if (pointer.isDown) {
             this.erase(
               texture,
@@ -99,7 +99,7 @@ export class MyScene extends Phaser.Scene {
           }
         });
 
-        this.input.on("pointerdown", (pointer: any) => {
+        this.input.on('pointerdown', (pointer: any) => {
           this.erase(
             texture,
             brush,
@@ -108,7 +108,7 @@ export class MyScene extends Phaser.Scene {
           );
         });
 
-        this.input.on("pointerup",  () => {
+        this.input.on('pointerup',  () => {
           this.copy(texture, textureSmall);
 
           const pxCount = this.count(textureSmall);
@@ -129,13 +129,13 @@ export class MyScene extends Phaser.Scene {
     }
 
     private erase(canvasTexture: any, source: any, x: number, y: number) {
-        canvasTexture.getContext().globalCompositeOperation = "destination-out";
+        canvasTexture.getContext().globalCompositeOperation = 'destination-out';
 
         canvasTexture.draw(x, y, source);
     }
 
     private copy(sourceTexture: any, destTexture: any) {
-        console.time("copy");
+        console.time('copy');
 
         destTexture
             .clear()
@@ -154,11 +154,11 @@ export class MyScene extends Phaser.Scene {
 
         destTexture.update();
 
-        console.timeEnd("copy");
+        console.timeEnd('copy');
     }
 
     private count(canvasTexture: any) {
-        console.time("count");
+        console.time('count');
 
         var pixels = canvasTexture.getPixels();
         var filled = 0;

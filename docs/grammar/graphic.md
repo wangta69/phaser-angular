@@ -2,6 +2,9 @@
 
 참조 : https://rexrainbow.github.io/phaser3-rex-notes/docs/site/graphics/
 
+
+type: Phaser.CANVAS 에서는 일부(fillGradientStyle)가 작동하지 않을 수 있으므로
+Phaser.AUTO 로 설정후 처리
 ## path vs line
 ```
 line은  path에 의해 생성되고 path는 점들의 집합이다.

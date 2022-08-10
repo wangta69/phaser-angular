@@ -19,6 +19,9 @@ export class MyScene extends Phaser.Scene {
         this.game = new Phaser.Game(this.config);
     }
 
+    public init() {
+    }
+
     public preload()  {
     }
 
@@ -27,6 +30,7 @@ export class MyScene extends Phaser.Scene {
 
     override update()  {
     }
+
 }
 ```
 coinfig.scene 에 정의된 함수되로 차례로 실행된다.

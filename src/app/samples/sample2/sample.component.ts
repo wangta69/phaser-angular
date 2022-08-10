@@ -83,7 +83,7 @@ export class MyScene extends Phaser.Scene {
         ///////////////////////////
         this.add.text(500, 50, 'draw line 남색 color');
         g.lineStyle(10, 0x0066F); // graphics.lineStyle(lineWidth, color, alpha);
-        // graphics2.fillGradientStyle(0xff0000, 0x00ff00, 0xff0000, 0xffff00, 1);
+        // g.fillGradientStyle(0xff0000, 0x00ff00, 0xff0000, 0xffff00, 1);
         g.fillStyle(0xFF00FF); // line 일경우 fillStyle이 먹지 않는다.
         g.beginPath();
 
@@ -104,6 +104,9 @@ export class MyScene extends Phaser.Scene {
         g.fillRect(700, 100,  24, 10);
         g.strokeRect(700, 100, 24, 10);
 
+
+        g.fillGradientStyle(0xff0000, 0x00ff00, 0x0000ff, 0xffff00, 1);
+        g.fillRect(250, 300, 100, 100);
 
 
 
