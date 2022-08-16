@@ -6,12 +6,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { SampleComponent1 } from './samples/sample1/sample.component';
-import { SampleComponent2 } from './samples/sample2/sample.component';
+import { SampleComponent2 } from './samples/graphic/sample.component';
+import { GraphToSpriteComponent } from './samples/graphic/graph-to-sprite.component';
+
 import { Bricks } from './samples/block-game/sample.component';
 import { Tank } from './samples/tank-game/sample.component';
 import { TextureComponent } from './samples/texture/sample.component';
 import { Texture1Component } from './samples/texture/sample1.component';
 import { Texture2Component } from './samples/texture/sample2.component';
+import { Texture3Component } from './samples/texture/sample3.component';
 
 import { ParticleComponent } from './samples/particles/sample.component';
 import { SnowComponent } from './samples/particles/snow.component';
@@ -51,11 +54,13 @@ import {FixedRotationComponent} from './samples/matter/fixed-rotation.component'
     AppComponent,
     SampleComponent1,
     SampleComponent2,
+    GraphToSpriteComponent,
     Bricks,
     Tank,
     TextureComponent,
     Texture1Component,
     Texture2Component,
+    Texture3Component,
     ParticleComponent,
     SnowComponent,
     ExplodeComponent,

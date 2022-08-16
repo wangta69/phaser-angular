@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SampleComponent1 } from './samples/sample1/sample.component';
-import { SampleComponent2 } from './samples/sample2/sample.component';
+import { SampleComponent2 } from './samples/graphic/sample.component';
+import { GraphToSpriteComponent } from './samples/graphic/graph-to-sprite.component';
 import { Bricks } from './samples/block-game/sample.component';
 import { Tank } from './samples/tank-game/sample.component';
 import { TextureComponent } from './samples/texture/sample.component';
 import { Texture1Component } from './samples/texture/sample1.component';
 import { Texture2Component } from './samples/texture/sample2.component';
+import { Texture3Component } from './samples/texture/sample3.component';
 import { ParticleComponent } from './samples/particles/sample.component';
 import { SnowComponent } from './samples/particles/snow.component';
 import { ExplodeComponent } from './samples/particles/explode.component';
@@ -39,7 +41,9 @@ import {FixedRotationComponent} from './samples/matter/fixed-rotation.component'
 
 const routes: Routes = [
     { path: 'samples/sample1', component: SampleComponent1 },
-    { path: 'samples/sample2', component: SampleComponent2 },
+    { path: 'samples/graphic', component: SampleComponent2 },
+    { path: 'samples/graphic-to-sprite', component: GraphToSpriteComponent },
+
     { path: 'samples/game-bricks', component: Bricks },
     { path: 'samples/game-tanks', component: Tank },
     { path: 'samples/game-risky', component: RiskyGameComponent },
@@ -51,6 +55,7 @@ const routes: Routes = [
     { path: 'samples/texture', component: TextureComponent },
     { path: 'samples/texture1', component: Texture1Component },
     { path: 'samples/texture2', component: Texture2Component },
+    { path: 'samples/texture3', component: Texture3Component },
     { path: 'samples/randomterrain', component: RandomTerrainGameComponent },
     { path: 'samples/userterrain', component: UserTerrainGameComponent },
     { path: 'samples/randomterrain2', component: RandomTerrain2GameComponent },

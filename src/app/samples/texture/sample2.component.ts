@@ -1,187 +1,162 @@
-import { Component, AfterViewInit } from '@angular/core';
-import * as Phaser from 'phaser';
-@Component({
-  selector: 'app-root',
-  template:``
-})
-export class Texture2Component implements AfterViewInit {
-    // name = 'Angular';
-    // public game: Phaser.Game;
-    public readonly gameConfig = {
-        // type: Phaser.CANVAS,
-        type: Phaser.AUTO,
-        parent: "phaser-example",
-        width: 800,
-        height: 600,
-        backgroundColor: "#2d2d88",
-        // scene: {
-        //   preload: preload,
-        //   create: create
-        // },
-        loader: {
-          // baseURL: "/assets/images/texture/",
-          // crossOrigin: "anonymous"
+    import { Component, AfterViewInit } from '@angular/core';
+    import * as Phaser from 'phaser';
+    @Component({
+      selector: 'app-root',
+      template:``
+    })
+    export class Texture2Component implements AfterViewInit {
+        // name = 'Angular';
+        // public game: Phaser.Game;
+        public readonly gameConfig = {
+            type: Phaser.AUTO,
+            // type: Phaser.CANVAS,
+            parent: "phaser-example",
+            width: 800,
+            height: 600,
+            backgroundColor: "#000000",
+            // scene: {
+            //   preload: preload,
+            //   create: create
+            // },
+            loader: {
+              // baseURL: "/assets/images/texture/",
+              // crossOrigin: "anonymous"
+            }
+        }
+
+        private game: any;
+
+        constructor(
+        ) { }
+
+        ngOnInit() {
+          this.game = new Phaser.Game(this.gameConfig);
+          this.game.scene.add('main', new MyScene(), true);
+        }
+
+        ngAfterViewInit() {
+
         }
     }
 
-    private game: any;
+    export class MyScene extends Phaser.Scene {
+        private graphics: any;
+        private path: any;
+        constructor() {
+            super({
+                key: 'Scene',
+            });
+        }
 
-    constructor(
-    ) { }
+        public preload()  {
+            this.load.image('brush', '/assets/images/texture/sparkle1.png');
+            this.load.image('pattern', '/assets/images/tank/forest-pattern.jpg');// 100 x 100
+            this.load.image('pattern-snow', '/assets/images/tank/snow-pattern.jpg');// 100 x 100
+            this.load.image('bg', '/assets/images/tank/forest-bg.png');
+        }
 
-    ngOnInit() {
-      this.game = new Phaser.Game(this.gameConfig);
-      this.game.scene.add('main', new MyScene(), true);
+        public create()  {
+            this.add.image(0, 0, 'bg').setOrigin(0); //  배경 그림을 올린다.
+
+            const SCALE = 0.1;
+            const texture = this.textures.createCanvas('canvastexture', 800, 600);
+
+            const grass: any = this.textures.get('pattern').getSourceImage();
+
+             // this.textures.get('pattern').getSourceImage();
+            const grassBase64: any = this.textures.getBase64('pattern-snow');
+
+
+
+            ////
+            // 아래와 같은 방식으로 native canvas를 이용하여 pattern 채우기도 가능함
+            // const rectTest = document.createElement('canvas');
+            // const ctx: any = rectTest.getContext('2d');
+            // const img = new Image();
+            // // img.src = '/assets/images/tank/forest-pattern.jpg';
+            // img.src = grassBase64;
+            // img.onload = () => {
+            //   const pattern = ctx.createPattern(img, 'repeat');
+            //   ctx.fillStyle = pattern;
+            //   ctx.strokeStyle = "rgba(0,0,0,1)";
+            //   ctx.lineWidth = 20;
+            //   ctx.stroke();
+            //   ctx.fillRect(0, 0, 800, 600);
+            //   this.textures.addCanvas('rectTest', rectTest);
+            //   const rectImage = this.add.image(0, 0, 'rectTest');
+            //
+            // };
+
+            // const rectTest = document.createElement('canvas');
+            // const ctx: any = rectTest.getContext('2d');
+            //
+            // // img.src = '/assets/images/tank/forest-pattern.jpg';
+            //
+            // ctx.fillStyle = 'blue';
+            // ctx.strokeStyle = "rgba(0,0,0,1)";
+            // ctx.lineWidth = 100;
+            //
+            // ctx.beginPath();
+            // ctx.rect(200, -200, 250, 400);
+            // // ctx.stroke();
+            // ctx.stroke();
+            // // ctx.fillRect(0, 0, 800, 600);
+            // this.textures.addCanvas('rectTestKey', rectTest);
+            // const rectImage = this.add.image(0, 0, 'rectTestKey');
+
+
+
+            ///
+
+
+            // 패턴으로채우기 (패턴 이미지 100 x 100, canvas 800 x 600)
+            for (let i = 0; i < 8; i++) {
+
+                for (let j = 0; j < 6; j++) {
+                    const x = i * 100;
+                    const y = j * 100;
+                    console.log(x, y);
+                    texture.draw(x, y, grass);
+                    // texture.setTexture()
+                }
+            }
+
+            this.add.image(0, 0, 'canvastexture').setOrigin(0); // 생성된 texture(canvas)를 메인 canvas 위에 올린다.
+
+
+            texture.getContext().globalCompositeOperation = 'destination-in'; // 'destination-in' 충첩되지 않는  부분만 남긴다.
+
+            texture.getContext().createPattern(grass, 'repeat');
+
+            const g: any = this.make.graphics({x:0, y:0, add: false});
+            g.lineStyle(10, 0x0066F); // graphics.lineStyle(lineWidth, color, alpha);
+            g.fillStyle(0xFF00FF, 1.0); // line 일경우 fillStyle이 먹지 않는다.
+            g.beginPath();
+
+            g.moveTo(0, 600);
+            g.lineTo(0, 400);
+            g.lineTo(100, 300);
+            g.lineTo(200, 350);
+            g.lineTo(300, 500);
+            g.lineTo(400, 550);
+            g.lineTo(500, 500);
+            g.lineTo(600, 550);
+            g.lineTo(700, 500);
+            g.lineTo(800, 600);
+            g.closePath();
+            g.fillPath();
+            g.strokePath();
+            g.generateTexture('newKey', 800, 600); // key, width, height
+            g.destroy();
+
+            const newKey: any = this.textures.get('newKey').getSourceImage();
+
+            texture.draw(0, 0, newKey);
+        }
+
+        // 업데이트될 정보를 입력
+        override update()  {
+        }
+
     }
-
-    ngAfterViewInit() {
-
-    }
-}
-
-export class MyScene extends Phaser.Scene {
-    private graphics: any;
-    private path: any;
-    constructor() {
-        super({
-            key: 'Scene',
-        });
-    }
-
-    public preload()  {
-        this.load.image('grass', 'assets/images/grass.jpg');
-        // this.load.image('grass', 'assets/images/button.png');
-        this.load.image('undersea', 'assets/pics/undersea.jpg');
-
-        // this.load.atlas('megaset', 'assets/atlas/megaset-0.png', 'assets/atlas/megaset-0.json');
-    }
-
-    public create()  {
-
-        const g: any = this.add.graphics();
-        // 패턴으로 채우기 & mask 처리하기
-        const pattern = this.add.tileSprite(0, 0, 800, 600, 'grass').setOrigin(0, 0).setVisible(true)
-        g.fillCircle(150, 150, 100);
-        // const circleShape = this.make.graphics({}, true).fillCircle(150, 150, 100);
-        pattern.setMask(g.createGeometryMask());
-
-
-        // const backgroundImage = this.add.image(0, 0, 'undersea').setOrigin(0, 0).setVisible(true);
-        // const rectangleShape = g.fillRect(300, 300, 200, 200)
-        // backgroundImage.setMask(rectangleShape.createGeometryMask());
-
-
-
-        const pattern1 = this.add.tileSprite(0, 0, 800, 600, 'grass').setOrigin(0, 0).setVisible(true)
-        const path = this.add.path(300, 100); // 시작점
-         // path.splineTo([ 164, 446, 274, 542, 412, 457, 522, 541, 664, 464 ]);
-        path.lineTo(400, 100);
-        path.lineTo(400, 200);
-        //  cubicBezierTo: function (x, y, control1X, control1Y, control2X, control2Y)
-        path.cubicBezierTo(250, 200, 200, 100, 400, 100);
-        path.closePath();
-        g.fillPoints(path.getPoints()); //
-
-        path.draw(g);
-        pattern1.setMask(g.createGeometryMask());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       //  const graphics: any = this.add.graphics();
-       //
-       //  // graphics.setTexture('megaset', 'contra1');
-       //  graphics.fillStyle(0x00ff00);
-       //  const rect = graphics.fillRect(100, 100, 256, 256).setVisible(true);
-       //
-       //
-       //  // graphics.setTexture('megaset', 'dragonwiz', 1);
-       //  //
-       //
-       //graphics.fillGradientStyle(0xff0000, 0x00ff00, 0x0000ff, 0xffff00, 1);
-       //  graphics.fillRect(350, 300, 256, 256);
-       //
-       //
-       //
-       //  const rt: any = this.add.renderTexture(
-       //      100,
-       //      10,
-       //      500,
-       //      50
-       //  );
-       //  const pattern = this.add.tileSprite(0, 0, 500, 500, 'grass');
-       //  pattern.setVisible(false);
-       //  rt.draw(pattern, 10, 10);
-       //
-       //  const rt1 = this.add.renderTexture(0, 0, 800, 600);
-       //
-       // const circle = this.add.circle(200, 200, 80, 0x6666ff);
-       // circle.setVisible(false);
-       // rt1.draw(circle, 500, 500);
-
-
-
-
-        // const pieceShape: any = this.add.graphics().fillRect(300, 300, 200, 200);  // 위와 문법 동일
-
-        // const rt2 = this.make.renderTexture({
-        //     x: 0,
-        //     y: 0,
-        //     width: 10,
-        //     height: 10,
-        // }, false)
-            // .setOrigin(0, 0);
-
-        // const pieceShape = this.make.graphics({}, true)
-        //     .fillCircle(300, 300, 200);
-
-        // const undersea = this.add.image(0, 0, 'undersea')
-        //     .setOrigin(0, 0)
-        //     .setVisible(true);
-
-        // const undersea = this.add.tileSprite(400, 300, 800, 600, 'grass');
-        // undersea.setVisible(true);
-        // //
-        // undersea.setMask(pieceShape.createGeometryMask());
-        // //
-        // rt2.draw(
-        //     undersea,
-        //     100,
-        //     100,
-        //     1,
-        // );
-    }
-
-    private erase(canvasTexture: any, source: any, x: number, y: number) {
-        canvasTexture.getContext().globalCompositeOperation = 'destination-out';
-
-        canvasTexture.draw(x, y, source);
-    }
-
-    // 업데이트될 정보를 입력
-    // override update()  {
-    //
-    //     // this.graphics.lineStyle(2, 0xffffff, 1);
-    //     // this.path.draw(this.graphics);
-    // }
-    public init() {
-        console.log('init....');
-    }
-    public render() {
-        console.log('renderer....');
-    }
-
-
-
-}
 

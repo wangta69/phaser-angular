@@ -108,25 +108,7 @@ export class MyScene extends Phaser.Scene {
         g.fillGradientStyle(0xff0000, 0x00ff00, 0x0000ff, 0xffff00, 1);
         g.fillRect(250, 300, 100, 100);
 
-
-
-
-
-        // g.fillStyle(0xffff00);
-        // g.lineStyle(2, 0xffffff, 1)
-        // // slopeGraphics.moveTo(100, 100);
-        //
-        // const path = this.add.path(100, 100);
-        //
-        // path.lineTo(500,100);
-        // path.lineTo(500,500);
-        // path.lineTo(100,500);
-        // path.closePath();
-        // path.draw(g);
-        // g.fillPoints(path.getPoints())
-
-
-
+        // g.destroy();
 
 
 

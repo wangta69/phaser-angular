@@ -12,6 +12,13 @@
 기본 구조 이해하기
  https://phaser.io/tutorials/making-your-first-phaser-3-game/part1
 
+
+## 기본 용어
+### 스프라이트(Sprite)
+2D 그래픽에 사용되는 기술로서 한장씩 독립된 이미지의 단위입니다.
+
+
+
 ## 환경설정 및 세팅
 ```
 npm i phaser
@@ -169,6 +176,7 @@ override update()  {
 [다각형 그리기](/docs/grammar/shape.md "shape")
 [Graphic(Drawing)](/docs/grammar/graphic.md "graphic")
 [Pattern & mask](/docs/grammar/pattern.md "pattern")
+[Texture](/docs/grammar/texture.md "texture")
 [충돌테스트(Collision)](/docs/grammar/collision.md "collision")
 
 [Tween](/docs/grammar/tween.md "tween")

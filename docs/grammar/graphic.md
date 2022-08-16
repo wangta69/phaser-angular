@@ -142,13 +142,43 @@ g.lineGradientStyle(barrelWidth, 0, 0, 0, 0)
 
 ```
 
-다음에 보기 이미지로 채우기
-//
+## graphic to Texture
+그래픽을 텍스쳐로 변경하는 방법입니다.
+```
+const g: any = this.make.graphics({x:0, y:0, add: false});
+g.lineStyle(10, 0x0066F);
+g.fillStyle(0xFF00FF, 1.0);
+g.beginPath();
 
+g.moveTo(0, 600);
+g.lineTo(0, 400);
+.......
+g.closePath();
+g.fillPath();
+g.strokePath();
+g.generateTexture('newKey', 800, 600); // key, width, height
+g.destroy();
+```
+이후 생성된 키를 이용하여 다양하게 게임에 활용할 수 있습니다.
+
+## mask
+아래처럼 특정이미지로 채워진 shape를 구현할 수 있습니다.
+```
+const g: any = this.add.graphics();
+const pattern = this.add.tileSprite(0, 0, 800, 600, 'grass').setOrigin(0, 0).setVisible(true)
+g.fillCircle(150, 150, 100);
+pattern.setMask(g.createGeometryMask());
+```
+```
+const backgroundImage = this.add.image(0, 0, 'undersea').setOrigin(0, 0).setVisible(true);
+const rectangleShape = g.fillRect(300, 300, 200, 200)
+backgroundImage.setMask(rectangleShape.createGeometryMask());
+
+```
 
 
 ## 물리적인 effet 추가하기
-sprite를 이용하여 바로 물리적엔진으로 변겨
+sprite를 이용하여 바로 물리적엔진으로 변경
 ```
  this.bomb = this.physics.add.sprite(this.airplane.x, this.airplane.y, 'bomb');
 ```

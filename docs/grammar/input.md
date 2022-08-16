@@ -21,6 +21,12 @@ if (cursors.up.isDown && player.body.touching.down)
 {
 }
 ```
+전체 키를 받을 경우
+```
+this.input.keyboard.on('keydown', (k: any) => {
+    const key = k.key.toUpperCase();
+});
+```
 left 키가 눌려진 상태이면 left방향으로 속도를 증가하고 일전에 정의한 player.anims.play에서 'left' 로 정의된 animation을 실행한다.
 
 up 상태가 눌려지만 Y측 중력값을 - 로 설정하여 위로 올라가게 한다.
