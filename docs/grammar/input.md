@@ -87,6 +87,22 @@ gameObject.setInteractive().on('pointerup', function(pointer, localX, localY, ev
 
 ### drag game object
 ```
+
+const ball1 = this.physics.add.sprite(200, 300,'cannonBall')
+.setInteractive({ draggable: true })
+.on('dragstart', (pointer: any, dragX: number, dragY: number) => {
+    // ...The x coordinate where the Pointer is currently dragging the Game Object, in world space.
+})
+.on('drag', (pointer: any, dragX: number, dragY: number) => {            
+    // The x coordinate where the Pointer is currently dragging the Game Object, in world space.
+    ball1.setPosition(dragX, dragY);
+
+})
+.on('dragend', (pointer: any, dragX: number, dragY: number, dropped: boolean) => {
+    // ...
+});
+
+
 gameObject
     .setInteractive({ draggable: true })
     .on('dragstart', function(pointer, dragX, dragY){
@@ -98,5 +114,7 @@ gameObject
     .on('dragend', function(pointer, dragX, dragY, dropped){
         // ...
     }, scope)
+
+
 ```
 

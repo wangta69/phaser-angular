@@ -47,11 +47,11 @@ strokePath 를 사용하기 위해서는 lineStyle을 적용해 주어야 한다
 ```
 const g = this.add.graphics({lineStyle: {width: 2, color: 0xffffff}});
 g.clear();
-g.beginPath();
+g.beginPath(); // ** 라인의 시작을 알림
 g.moveTo(x1, y1);
 g.lineTo(x2, y2);
 g.lineTo(x3, y3);
-g.strokePath();
+g.strokePath(); // ** 라인 끝맺기
 ```
  를 사용하기위해서는 fillStyle을 정의해 주어야 한다.
 ```
@@ -176,7 +176,23 @@ backgroundImage.setMask(rectangleShape.createGeometryMask());
 
 ```
 
+## Input Event  
+```
+g = game.add.graphics(300, 200);
 
+........................
+// To Drawing Something;
+........................
+
+g.inputEnabled = true;
+g.input.useHandCursor = true;
+
+g.events.onInputDown.add(() => {});
+g.events.onInputUp.add(() => {});
+g.events.onInputOver.add(() => {});
+g.events.onInputOut.add(() => {});
+
+```
 ## 물리적인 effet 추가하기
 sprite를 이용하여 바로 물리적엔진으로 변경
 ```

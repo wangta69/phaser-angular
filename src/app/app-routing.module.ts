@@ -39,6 +39,8 @@ import {DropComponent} from './samples/drop/sample.component';
 import {StaticComponent} from './samples/matter/static.component';
 import {FixedRotationComponent} from './samples/matter/fixed-rotation.component';
 
+import {AngleComponent} from './samples/math/angle.component';
+
 const routes: Routes = [
     { path: 'samples/sample1', component: SampleComponent1 },
     { path: 'samples/graphic', component: SampleComponent2 },
@@ -79,6 +81,8 @@ const routes: Routes = [
     { path: 'samples/animaion', component: Animation },
     { path: 'samples/matter/static', component: StaticComponent },
     { path: 'samples/matter/fixed-rotation', component: FixedRotationComponent },
+
+    { path: 'samples/math/angle', component: AngleComponent },
 ];
 
 @NgModule({

@@ -2,7 +2,7 @@
 
 ## shaking the camera
 ```
-
+this.cameras.main.shake(duration[milliseconds], intensity);
 this.cameras.main.shake(800, 0.01);
 ```
 

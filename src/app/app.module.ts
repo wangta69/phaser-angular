@@ -46,6 +46,8 @@ import {RiskyGameComponent} from './samples/risky-game/game.component';
 import {RiskyGame1Component} from './samples/risky-game/game1.component';
 import {DropComponent} from './samples/drop/sample.component';
 
+import {AngleComponent} from './samples/math/angle.component';
+
 import {StaticComponent} from './samples/matter/static.component';
 import {FixedRotationComponent} from './samples/matter/fixed-rotation.component';
 
@@ -87,6 +89,8 @@ import {FixedRotationComponent} from './samples/matter/fixed-rotation.component'
     DropComponent,
     Box2dGameComponent,
     FixedRotationComponent,
+
+    AngleComponent,
   ],
   imports: [
     BrowserModule,

@@ -126,7 +126,7 @@
 
             texture.getContext().globalCompositeOperation = 'destination-in'; // 'destination-in' 충첩되지 않는  부분만 남긴다.
 
-            texture.getContext().createPattern(grass, 'repeat');
+            // texture.getContext().createPattern(grass, 'repeat');
 
             const g: any = this.make.graphics({x:0, y:0, add: false});
             g.lineStyle(10, 0x0066F); // graphics.lineStyle(lineWidth, color, alpha);
