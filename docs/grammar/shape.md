@@ -11,8 +11,19 @@ rect.setStrokeStyle(4, 0xefc53f); // 테두리 그리기
 
 ```
 
+##  shape에 physics  추가하기
+```
+const rect = this.add.rectangle(x, y, w, h, 0x9966ff).setOrigin(0, 0)
+this.physics.add.existing(rect, false);
+```
+
+
 ### 타원
 ```
+const circle = this.add.circle(400, 200, 80, 0x9966ff);
+circle.setStrokeStyle(4, 0xefc53f);
+
+
 var circle = new Phaser.Geom.Circle(x, y, radius);
 ```
 

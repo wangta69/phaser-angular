@@ -11,8 +11,22 @@ public create()  {
 ```
 this.physics.add.collider(this.cannonball, this.pirateship, (cannonball: any, pirateship: any) => {
 });
+```
+
+## 한번만 처리하기
+- 충돌이 한번 일어나더라고 타겟이 사라지지 않는 이상 계속적으로  callback이 발생한다.
+이것을 방지하기위해 4번째 인자값을 추가하여 하용한다.
 
 ```
+this.colliderActivated = true;
+this.physics.add.collider(
+    this.cannonball,
+    this.pirateship,
+    (cannonball: any, pirateship: any) => {console.log('hit test');this.colliderActivated = false;},
+    ()=>{return this.colliderActivated}
+    );
+```
+
 ## overlap 사용시
 ```
 override update()  {

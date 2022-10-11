@@ -110,6 +110,8 @@ endIndex : The index of points to stop drawing at. Defaults to points.length.
 ## Rectangle
 ```
 const g = this.add.graphics();
+const {x, y, width, height} = {x: 100, y: 100, width: 100, height: 100};;
+const rect =  new Phaser.Geom.Rectangle(x, y, width, height);
 g.fillRectShape(rect); // rect: {x, y, width, height}
 g.fillRect(x, y, width, height);
 g.strokeRectShape(rect);  // rect: {x, y, width, height}

@@ -177,6 +177,8 @@ override update()  {
 [Graphic(Drawing)](/docs/grammar/graphic.md "graphic")
 [Pattern & mask](/docs/grammar/pattern.md "pattern")
 [Texture](/docs/grammar/texture.md "texture")
+
+[motion - move](/docs/grammar/motion.md "motion")
 [충돌테스트(Collision)](/docs/grammar/collision.md "collision")
 
 [Tween](/docs/grammar/tween.md "tween")
