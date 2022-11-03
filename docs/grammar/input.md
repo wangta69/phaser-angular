@@ -63,6 +63,15 @@ public create()  {
 pointerdown // On any touching start
 pointerup  // On any touching end
 ```
+```
+gameObject.setInteractive().on('pointerdown', function(pointer, localX, localY, event){
+    // ...
+}, scope);
+
+gameObject.setInteractive().on('pointerup', function(pointer, localX, localY, event){
+    // ...
+}, scope);
+```
 
 ### Is touching
 ```
