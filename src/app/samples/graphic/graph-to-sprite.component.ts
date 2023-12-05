@@ -97,8 +97,5 @@ export class MyScene extends Phaser.Scene {
         graphics.fillPath();
         graphics.strokePath();
     }
-
-
-
 }
 
