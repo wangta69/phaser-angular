@@ -37,7 +37,8 @@ import { BasicGameComponent7 } from './samples/basic-game/sample07.component';
 import { BasicGameComponent8 } from './samples/basic-game/sample08.component';
 import { BasicGameComponent9 } from './samples/basic-game/sample09.component';
 import { Animation } from './samples/animation/animation.component';
-
+import { TimeLine } from './samples/timeline/timeline.component';
+import { Following } from './samples/following/following.component';
 import {CircularGameComponent} from './samples/game/circular/game.component';
 import {RandomTerrainGameComponent} from './samples/random-terrain/game.component';
 import {UserTerrainGameComponent} from './samples/random-terrain/game1.component';
@@ -50,7 +51,6 @@ import {AngleComponent} from './samples/math/angle.component';
 
 import {StaticComponent} from './samples/matter/static.component';
 import {FixedRotationComponent} from './samples/matter/fixed-rotation.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,6 +78,8 @@ import {FixedRotationComponent} from './samples/matter/fixed-rotation.component'
     BasicGameComponent9,
     CircularGameComponent,
     Animation,
+    TimeLine,
+    Following,
     BombComponent,
     PirateComponent,
     Pirate1Component,

@@ -99,7 +99,7 @@ export class MyScene extends Phaser.Scene {
         this.physics.add.collider(this.player, this.platforms);
 
         // add cursor
-        this.cursors = this.input.keyboard.createCursorKeys();
+        this.cursors = this.input.keyboard?.createCursorKeys();
 
         // add stars
         this.stars = this.physics.add.group({

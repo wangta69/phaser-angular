@@ -59,7 +59,7 @@ export class MyScene extends Phaser.Scene {
 
     public create()  {
 
-        const starGraphics = this.make.graphics({x: 0, y: 0, add: false});
+        const starGraphics = this.make.graphics({x: 0, y: 0});//, add: false
         this.drawStar(starGraphics, 105, 105,  5, 100, 50, 0xFFFF00, 0xFF0000);
         starGraphics.generateTexture('starGraphics', 210, 210);
         const image = this.add.image(400, 300, 'starGraphics');

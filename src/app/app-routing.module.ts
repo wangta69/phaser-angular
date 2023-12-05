@@ -23,6 +23,8 @@ import { BasicGameComponent7 } from './samples/basic-game/sample07.component';
 import { BasicGameComponent8 } from './samples/basic-game/sample08.component';
 import { BasicGameComponent9 } from './samples/basic-game/sample09.component';
 import { Animation } from './samples/animation/animation.component';
+import { TimeLine } from './samples/timeline/timeline.component';
+import { Following } from './samples/following/following.component';
 import { BombComponent } from './samples/bomb/bomb.component';
 import { PirateComponent } from './samples/pirate/pirate.component';
 import { Pirate1Component } from './samples/pirate/pirate1.component';
@@ -79,6 +81,9 @@ const routes: Routes = [
     { path: 'samples/basicgame/step9', component: BasicGameComponent9 },
     { path: 'game/circular', component: CircularGameComponent },
     { path: 'samples/animaion', component: Animation },
+    { path: 'samples/timeline', component: TimeLine },
+    { path: 'samples/following', component: Following },
+    
     { path: 'samples/matter/static', component: StaticComponent },
     { path: 'samples/matter/fixed-rotation', component: FixedRotationComponent },
 
