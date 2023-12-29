@@ -6,8 +6,6 @@ import * as simplify from 'simplify-js';
   template: ``
 })
 export class BombComponent implements AfterViewInit {
-  // name = 'Angular';
-  // public game: Phaser.Game;
   public readonly gameConfig = {
     type: Phaser.AUTO,
     width: 800,
